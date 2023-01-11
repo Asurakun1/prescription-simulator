@@ -1,0 +1,31 @@
+.window{
+    height: 75vh;
+    width: 70vw;
+    border: 1px solid black;
+    background-color: whitesmoke;
+}
+
+.window .inner-window{
+    border: 1px solid black;
+    margin: 2rem auto;
+    min-height: 68vh;
+    max-width: 65vw;
+    display: flex;
+    justify-content: center;
+}
+
+.window .inner-window .split{
+    border: 1px solid black;
+    width: 100%;
+}
+
+.window .inner-window .split .info{
+    border: 1px solid black;
+    flex-grow: 1;
+}
+
+.window .inner-window .right{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
