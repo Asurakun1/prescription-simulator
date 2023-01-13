@@ -10,6 +10,7 @@
     font-size: 1.25rem;
     width: 25vw;
     height: 14vh;
+    resize: none;
 }
 
 .instruct-sigs .quantity,
