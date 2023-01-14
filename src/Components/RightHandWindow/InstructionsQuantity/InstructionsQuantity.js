@@ -17,7 +17,10 @@ const InstructionsQuantity = () => {
                     <input type={"number"} min={0}></input>
                 </h4>
             </div>
-            <textarea onChange={handleChange} value={sigs}></textarea>
+            <textarea
+                onChange={handleChange}
+                defaultValue={sigs}>
+            </textarea>
             <div className='days'>
                 <h4>Days:<input type={"number"} min={1}></input></h4>
             </div>

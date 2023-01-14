@@ -13,15 +13,16 @@
     resize: none;
 }
 
-.instruct-sigs .quantity,
+
 .instruct-sigs .quantity h4,
 .instruct-sigs .days h4 {
-    margin-left: 0.6rem;
+    margin-left: 1rem;
     display: flex;
     gap: 0.5rem;
 }
 
-.instruct-sigs .quantity h4 {
+.instruct-sigs .quantity h4,
+.instruct-sigs .days h4 {
     align-items: stretch;
 }
 
@@ -29,8 +30,6 @@
     max-width: 3rem;
 }
 
-.instruct-sigs .quantity h4,
-.instruct-sigs .days h4{
+.instruct-sigs .quantity{
     display: flex;
-    align-items: baseline;
 }

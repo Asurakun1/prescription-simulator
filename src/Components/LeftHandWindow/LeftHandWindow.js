@@ -2,7 +2,9 @@
 const LeftHandWindow = () => {
     return (
         <div className='split'>
-            <h1>Hello </h1>
+            <div>
+                <h1>This section is for a prescription image </h1>
+            </div>
         </div>
     )
 }

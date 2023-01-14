@@ -1,10 +1,18 @@
 import './DrugInfo.css'
+import { useState } from 'react';
+
 
 const DrugInfo = () => {
+    const [drugName, setDrugName] = useState('AMOXICILLIN')
+
+    const handleChange = (event) => {
+        setDrugName(event.target.value)
+    }
+
     return (
         <div className='info drug-info'>
             <h4 className='drug-name'>Drug Name:
-                <input value={"AMOXICILLIN"}></input>
+                <input onChange={handleChange} value={drugName}></input>
             </h4>
         </div>
     );

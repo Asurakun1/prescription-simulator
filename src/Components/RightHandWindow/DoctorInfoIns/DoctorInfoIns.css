@@ -1,0 +1,32 @@
+.prescriber .doc-info,
+.prescriber .doc-name,
+.prescriber .doc-third-party {
+    display: flex;
+    margin-left: 1rem;
+    gap: 1vw;
+}
+
+.prescriber .doc-info h4,
+.prescriber .doc-name h4,
+.prescriber .doc-third-party h4 {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.prescriber .doc-info h4 input {
+    max-width: 6.4vw;
+}
+
+.prescriber .doc-name h4 input {
+    max-width: 7vw;
+}
+
+.prescriber {
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    letter-spacing: 0.03rem;
+}
