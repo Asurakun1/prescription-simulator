@@ -1,9 +1,11 @@
+import './LeftHandWindow.css'
+import Rx from './Rx/Rx'
 
 const LeftHandWindow = () => {
     return (
-        <div className='split'>
-            <div>
-                <h1>This section is for a prescription image </h1>
+        <div className='split left'>
+            <Rx />
+            <div className='editor'>
             </div>
         </div>
     )
