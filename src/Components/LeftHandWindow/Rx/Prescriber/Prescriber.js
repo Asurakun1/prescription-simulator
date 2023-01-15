@@ -1,30 +1,30 @@
-const Prescriber = () => {
+const Prescriber = (props) => {
     return (
         <div className='sect2'>
             <div className="inner-sect2">
                 <div>
                     <div className='name-date'>
-                        <p>Prescriber: John Doe </p>
+                        <p>Prescriber: {props.prescriber.Prescriber}</p>
                     </div>
                     <div className='address'>
-                        <p>123 Main St, Suite 200, Anytown USA 12345</p>
+                        <p>{props.prescriber.Prescriber_Address}</p>
                     </div>
                 </div>
                 <div className="phone-fax">
                     <div>
                         <p>Fax: </p>
-                        <p>555-555-5555</p>
+                        <p>{props.prescriber.Fax}</p>
                     </div>
                     <div>
                         <p>Phone: </p>
-                        <p>555-555-5555</p>
+                        <p>{props.prescriber.Phone}</p>
                     </div>
                 </div>
             </div>
             <div className='dea-npi'>
                 <div className="dea-npi-info">
-                    <p>NPI: 1234567890</p>
-                    <p>DEA: AB1234567</p>
+                    <p>NPI: {props.prescriber.NPI}</p>
+                    <p>DEA: {props.prescriber.DEA}</p>
                 </div>
             </div>
         </div>

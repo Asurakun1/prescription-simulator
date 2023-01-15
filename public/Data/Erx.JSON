@@ -1,12 +1,15 @@
 [
     {
-        "id": 0,
+        "id": 1,
         "Date": "01/20/2022",
         "Patient_info": {
             "Patient": "John Doe",
             "DOB": "01/01/1980",
             "Patient_Address": "123 Elm St, Anytown USA 12345",
-            "Patient_Phone": "555-555-5555"
+            "Patient_Phone": "555-555-5555",
+            "insurance": [
+                "KAISE", "CRMRK", "C19IMUNI", "FINDINS", "CASH"
+            ]
         },
         "Prescriber_info": {
             "Prescriber": "John Doe",
@@ -15,6 +18,44 @@
             "Phone": "555-555-5555",
             "NPI": "1234567890",
             "DEA": "AB1234567"
+        },
+        "Drug_info": {
+            "Drug_Name": "Amoxicillin 500mg",
+            "Drug_Form": "Tablet",
+            "Quantity": 40,
+            "Sig": "tk 2 t po q 12 h x 10 days",
+            "Refills": 1,
+            "Substitution": "Substitution Allowed"
+        }
+        
+    },
+    {
+        "id": 2,
+        "Date": "01/20/2022",
+        "Patient_info": {
+            "Patient": "Jane Smith",
+            "DOB": "05/05/1990",
+            "Patient_Address": "456 Oak St, Anytown USA 54321",
+            "Patient_Phone": "201-784-2314",
+            "insurance": [
+                "FINDINS", "CASH"
+            ]
+        },
+        "Prescriber_info": {
+            "Prescriber": "Michael Johnson",
+            "Prescriber_Address": "789 Park Ave, Suite 100, Anytown USA 54321",
+            "Fax": "535-521-6541",
+            "Phone": "535-521-6543",
+            "NPI": "987654321",
+            "DEA": "CD1234567"
+        },
+        "Drug_info": {
+            "Drug_Name": "Lisinopril 20mg",
+            "Drug_Form": "Tablet",
+            "Quantity": 30,
+            "Sig": "1 tab po qd",
+            "Refills": 3,
+            "Substitution": "Substitution Allowed"
         }
     }
 ]

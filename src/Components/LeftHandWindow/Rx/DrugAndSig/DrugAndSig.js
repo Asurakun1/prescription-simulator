@@ -1,13 +1,13 @@
 import './DrugAndSig.css';
 
-const DrugAndSig = () => {
+const DrugAndSig = (props) => {
     return(
         <div className="sect3">
-            <h3>Amoxicillin 500mg</h3>
-            <p>Tk 2 t po q 12 h x 10 days</p>
-            <p>{"30 Tablet(s)"}</p>
-            <p>Refills: 0</p>
-            <p>Substitution Allowed</p>
+            <h3>{props.druginfo.Drug_Name} {props.druginfo.Drug_Form}</h3>
+            <p>{props.druginfo.Sig}</p>
+            <p>{props.druginfo.Quantity} {props.druginfo.Drug_Form}</p>
+            <p>Refills: {props.druginfo.Refills}</p>
+            <p>{props.druginfo.Substitution}</p>
         </div>
     );
 }

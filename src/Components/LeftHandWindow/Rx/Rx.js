@@ -3,19 +3,19 @@ import Patient from './Patient/Patient';
 import Prescriber from './Prescriber/Prescriber';
 import './Rx.css';
 
-const Rx = () => {
+const Rx = (props) => {
     return (
         <div className='mock-rx'>
-            <Patient />
+            <Patient patient={props.patient.Patient_info} Date={props.patient.Date}/>
             {
                 /*Doctors information and address*/
             }
             <div className='block'>
             </div>
-            <Prescriber />
+            <Prescriber prescriber={props.patient.Prescriber_info}/>
             <div className='block'>
             </div>
-            <DrugAndSig />
+            <DrugAndSig druginfo={props.patient.Drug_info}/>
         </div>
     );
 }

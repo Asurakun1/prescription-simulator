@@ -1,10 +1,10 @@
 import './LeftHandWindow.css'
 import Rx from './Rx/Rx'
 
-const LeftHandWindow = () => {
+const LeftHandWindow = (props) => {
     return (
         <div className='split left'>
-            <Rx />
+            <Rx patient={props.patient}/>
             <div className='editor'>
             </div>
         </div>

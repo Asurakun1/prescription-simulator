@@ -6,7 +6,7 @@ const DrugInfo = () => {
     const [drugName, setDrugName] = useState('AMOXICILLIN')
 
     const handleChange = (event) => {
-        setDrugName(event.target.value)
+        setDrugName(event.target.value.toUpperCase());
     }
 
     return (

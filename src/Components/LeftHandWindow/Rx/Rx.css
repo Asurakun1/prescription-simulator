@@ -5,6 +5,10 @@
     overflow: scroll;
 }
 
+.mock-rx{
+    background-color: white;
+}
+
 .mock-rx p {
     margin-right: 1vw;
 }

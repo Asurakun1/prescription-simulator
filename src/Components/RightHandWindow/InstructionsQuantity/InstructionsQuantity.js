@@ -19,7 +19,7 @@ const InstructionsQuantity = () => {
             </div>
             <textarea
                 onChange={handleChange}
-                defaultValue={sigs}>
+                value={sigs.toUpperCase()}>
             </textarea>
             <div className='days'>
                 <h4>Days:<input type={"number"} min={1}></input></h4>

@@ -1,25 +1,25 @@
 import './Patient.css';
 
-const Patient = () => {
+const Patient = (props) => {
     return (
         <div className='sect1'>
             <div className='layer1'>
                 <div className='pt-info'>
                     <div className='name-date'>
-                        <p>Patient: John Doe</p>
+                        <p>Patient: {props.patient.Patient}</p>
                     </div>
                     <div className='address'>
-                        <p>123 Elm St, Anytown USA 12345</p>
+                        <p>{props.patient.Patient_Address}</p>
                     </div>
                 </div>
                 <div className='pt-dob-date'>
                     <div>
                         <p><strong>Date: </strong></p>
-                        <p><strong>01/20/2022</strong></p>
+                        <p><strong>{props.Date}</strong></p>
                     </div>
                     <div>
                         <p className='dob'>DOB: </p>
-                        <p>01/01/1980</p>
+                        <p>{props.patient.DOB}</p>
                     </div>
                 </div>
             </div>
@@ -27,7 +27,7 @@ const Patient = () => {
                 <p></p>
                 <div className='pt-ph-n'>
                     <p>Phone: </p>
-                    <p>555-555-5555</p>
+                    <p>{props.patient.Patient_Phone}</p>
                 </div>
             </div>
         </div>
