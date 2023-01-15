@@ -2,6 +2,7 @@
     {
         "id": 1,
         "Date": "01/20/2022",
+        "cleared": "False",
         "Patient_info": {
             "Patient": "John Doe",
             "DOB": "01/01/1980",
@@ -32,6 +33,7 @@
     {
         "id": 2,
         "Date": "01/20/2022",
+        "cleared": "False",
         "Patient_info": {
             "Patient": "Jane Smith",
             "DOB": "05/05/1990",
@@ -62,6 +64,7 @@
     {
         "id": 3,
         "Date": "03/15/2022",
+        "cleared": "False",
         "Patient_info": {
             "Patient": "Jane Smith",
             "DOB": "07/25/1970",
@@ -91,11 +94,12 @@
     {
         "id": 4,
         "Date": "05/15/2022",
+        "cleared": "False",
         "Patient_info": {
             "Patient": "Emily Thompson",
             "DOB": "05/01/1990",
             "Patient_Address": "456 Elm St, Anytown USA 67890",
-            "Patient_Phone": "555-555-5555",
+            "Patient_Phone": "321-232-3332",
             "insurance": [
                 "BLUE CROSS BLUE SHIELD", "CIGNA", "MEDICARE", "CASH"
             ]
@@ -103,8 +107,8 @@
         "Prescriber_info": {
             "Prescriber": "Dr. John Thompson",
             "Prescriber_Address": "111 Main St, Suite 400, Anytown USA 67890",
-            "Fax": "555-555-5555",
-            "Phone": "555-555-5555",
+            "Fax": "567-676-6654",
+            "Phone": "567-676-6653",
             "NPI": "0987654321",
             "DEA": "DE1234567"
         },
