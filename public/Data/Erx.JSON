@@ -1,0 +1,20 @@
+[
+    {
+        "id": 0,
+        "Date": "01/20/2022",
+        "Patient_info": {
+            "Patient": "John Doe",
+            "DOB": "01/01/1980",
+            "Patient_Address": "123 Elm St, Anytown USA 12345",
+            "Patient_Phone": "555-555-5555"
+        },
+        "Prescriber_info": {
+            "Prescriber": "John Doe",
+            "Prescriber_Address": "123 Main St, Suite 200, Anytown USA 12345",
+            "Fax": "555-555-5555",
+            "Phone": "555-555-5555",
+            "NPI": "1234567890",
+            "DEA": "AB1234567"
+        }
+    }
+]

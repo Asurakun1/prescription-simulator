@@ -1,6 +1,8 @@
 .left .mock-rx {
     min-height: 40.91vh;
+    max-height: 40.91vh;
     text-indent: 1vw;
+    overflow: scroll;
 }
 
 .mock-rx p {
@@ -9,7 +11,8 @@
 
 .mock-rx .name-date,
 .mock-rx .sect1 .address,
-.mock-rx .sect2 .dea-npi {
+.mock-rx .sect2 .dea-npi,
+.mock-rx .sect2 .dea-npi .dea-npi-info {
     display: flex;
 }
 
@@ -30,4 +33,19 @@
 .mock-rx .block {
     background-color: rgb(17, 17, 17);
     min-height: 0.6rem;
+}
+
+.mock-rx .sect2 .dea-npi{
+    justify-content: space-between;
+}
+
+.mock-rx .sect2 .inner-sect2 .phone-fax div{
+    display: flex;
+    justify-content: space-between;
+    max-height: 1.7vh;
+}
+
+.mock-rx .sect2 .inner-sect2{
+    display: flex;
+    justify-content: space-between;
 }

@@ -1,0 +1,21 @@
+.sect1 .pt-ph{
+    display: flex;
+    justify-content: space-between;
+}
+
+.sect1 .pt-ph .pt-ph-n{
+    display: flex;
+    justify-content: space-between;
+}
+
+.sect1 .layer1{
+    display: flex;
+    justify-content: space-between;
+    max-height: 3.8vh;
+}
+
+.sect1 .layer1 .pt-dob-date div{
+    display: flex;
+    justify-content: space-between;
+    max-height: 1.8vh;
+}
