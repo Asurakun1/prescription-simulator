@@ -23,7 +23,7 @@
             "Drug_Name": "Amoxicillin 500mg",
             "Drug_Form": "Tablet",
             "Quantity": 40,
-            "Sig": "tk 2 t po q 12 h x 10 days",
+            "Sig": "tk 2 t po q 12 h x 10 days ",
             "Refills": 1,
             "Substitution": "Substitution Allowed"
         }
@@ -57,5 +57,66 @@
             "Refills": 3,
             "Substitution": "Substitution Allowed"
         }
+    },
+
+    {
+        "id": 3,
+        "Date": "03/15/2022",
+        "Patient_info": {
+            "Patient": "Jane Smith",
+            "DOB": "07/25/1970",
+            "Patient_Address": "456 Oak St, Anytown USA 54321",
+            "Patient_Phone": "421-563-1245",
+            "insurance": [
+                "MEDICARE", "BLUE CROSS", "C19IMUNI", "MEDICARE", "CASH"
+            ]
+        },
+        "Prescriber_info": {
+            "Prescriber": "Robert Smith",
+            "Prescriber_Address": "789 Elm St, Suite 100, Anytown USA 54321",
+            "Fax": "451-784-8854",
+            "Phone": "451-784-8853",
+            "NPI": "0987654321",
+            "DEA": "XY1234567"
+        },
+        "Drug_info": {
+            "Drug_Name": "olmesartan medoxomil/hydrochlorothiazide 20mg/12.5mg",
+            "Drug_Form": "Tablet",
+            "Quantity": 30,
+            "Sig": "Tk 1 tab po qd x 2 wks, then increase to 2 tab po qd if tolerated",
+            "Refills": 3,
+            "Substitution": "Substitution Allowed"
+        }
+    },
+    {
+        "id": 4,
+        "Date": "05/15/2022",
+        "Patient_info": {
+            "Patient": "Emily Thompson",
+            "DOB": "05/01/1990",
+            "Patient_Address": "456 Elm St, Anytown USA 67890",
+            "Patient_Phone": "555-555-5555",
+            "insurance": [
+                "BLUE CROSS BLUE SHIELD", "CIGNA", "MEDICARE", "CASH"
+            ]
+        },
+        "Prescriber_info": {
+            "Prescriber": "Dr. John Thompson",
+            "Prescriber_Address": "111 Main St, Suite 400, Anytown USA 67890",
+            "Fax": "555-555-5555",
+            "Phone": "555-555-5555",
+            "NPI": "0987654321",
+            "DEA": "DE1234567"
+        },
+        "Drug_info": {
+            "Drug_Name": "Escitalopram 10mg",
+            "Drug_Form": "Tablet",
+            "Quantity": 30,
+            "Sig": "Tk 1 tab po qd x 4 wks, then taper to 1 tab po qod x 2 wks",
+            "Refills": 2,
+            "Substitution": "Substitution Allowed"
+        }
     }
+    
+
 ]

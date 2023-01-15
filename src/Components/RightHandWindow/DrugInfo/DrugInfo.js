@@ -12,7 +12,7 @@ const DrugInfo = () => {
     return (
         <div className='info drug-info'>
             <h4 className='drug-name'>Drug Name:
-                <input onChange={handleChange} value={drugName}></input>
+                {<input type="search" onChange={handleChange} value={drugName} list="drug-name"></input>}
             </h4>
         </div>
     );

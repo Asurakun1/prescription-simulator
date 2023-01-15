@@ -4,7 +4,7 @@ import LeftHandWindow from '../LeftHandWindow/LeftHandWindow';
 import { useState, useEffect } from 'react';
 const Window = () => {
     const [patients, setPatients] = useState();
-    const patientId = 0;
+    const [patientId, setPatientId] = useState(0);
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -39,7 +39,7 @@ const Window = () => {
                          */
                     }
 
-                    <LeftHandWindow patient={patients[patientId]}/>
+                    <LeftHandWindow patient={patients[patientId]} setID={setPatientId}/>
                     <RightHandWindow />
                 </div>
                 :
