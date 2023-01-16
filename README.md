@@ -18,3 +18,6 @@ with the correct prescriber information and submit with the patients insurance p
 
 Recommended resolution is 1920x1080
 I cannot gurantee that anything less than that will display correctly
+
+## Current state of the project:
+https://icplus-rx-simulator.netlify.app/
