@@ -3,11 +3,11 @@ import DrugInfo from "./DrugInfo/DrugInfo";
 import InstructionsQuantity from "./InstructionsQuantity/InstructionsQuantity";
 
 
-const RightHandWindow = () => {
+const RightHandWindow = (props) => {
     return (
         <div className='split right'>
-            <DrugInfo />
-            <InstructionsQuantity />
+            <DrugInfo drugname={props.data.Drug_Name} drugform={props.data.Drug_Form}/>
+            <InstructionsQuantity quantity={props.data.Quantity} sig={props.data.Sig}/>
             <DoctorInfoIns />
         </div>
     );

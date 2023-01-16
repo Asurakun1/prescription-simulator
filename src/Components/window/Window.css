@@ -1,5 +1,5 @@
 .window{
-    height: 80vh;
+    height: 85vh;
     width: 75vw;
     border: 1px solid black;
     background-color: whitesmoke;
@@ -28,4 +28,28 @@
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
+}
+
+.window .work-queue{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    min-height: 5vh;
+}
+
+.window .work-queue .square{
+    position: absolute;
+    float: right;
+    max-height: 5vh;
+    min-width: 3vw;
+    right: 11.7vw;
+    top: 1.4vh;
+    font-size: 1rem;
+    text-align: center;
+    box-shadow: 0rem 0rem 0.3rem 0.2rem rgba(0, 0, 0, 0.397);
+    border-radius: 20%;
+}
+
+.window .loading{
+    text-align: center;
 }

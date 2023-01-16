@@ -1,9 +1,13 @@
 import './DrugInfo.css'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 
-const DrugInfo = () => {
-    const [drugName, setDrugName] = useState('AMOXICILLIN')
+const DrugInfo = (props) => {
+    const [drugName, setDrugName] = useState(``)
+
+    useEffect(() =>{
+        setDrugName(`${props.drugname.toUpperCase()} ${props.drugform.toUpperCase()}`);
+    }, [props.drugname, props.drugform])
 
     const handleChange = (event) => {
         setDrugName(event.target.value.toUpperCase());
