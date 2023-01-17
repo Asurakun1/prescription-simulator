@@ -6,7 +6,7 @@ const Patient = (props) => {
             <div className='layer1'>
                 <div className='pt-info'>
                     <div className='name-date'>
-                        <p>Patient: {props.patient.Patient}</p>
+                        <p>{props.patient.Patient}</p>
                     </div>
                     <div className='address'>
                         <p>{props.patient.Patient_Address}</p>

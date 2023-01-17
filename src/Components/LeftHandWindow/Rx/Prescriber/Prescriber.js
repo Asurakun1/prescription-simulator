@@ -4,7 +4,7 @@ const Prescriber = (props) => {
             <div className="inner-sect2">
                 <div>
                     <div className='name-date'>
-                        <p>Prescriber: {props.prescriber.Prescriber}</p>
+                        <p>{props.prescriber.Prescriber}</p>
                     </div>
                     <div className='address'>
                         <p>{props.prescriber.Prescriber_Address}</p>

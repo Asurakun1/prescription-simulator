@@ -1,19 +1,31 @@
 import './InstructionsQuantity.css';
 import { useEffect, useState } from 'react';
+import { sigList } from './SigList';
 
 const InstructionsQuantity = (props) => {
     const [sigs, setSigs] = useState("");
     const [preSigs, setPreSigs] = useState("");
     const [quantity, setQuantity] = useState();
+    const [quantityDisp, setQuantityDisp] = useState();
 
     useEffect(() => {
-        setQuantity(props.quantity)
+        setQuantity(props.quantity);
+        setQuantityDisp(props.quantity);
         setSigs("");
+        setPreSigs("");
     }, [props.quantity, props.sig]);
 
-
+    useEffect(() => {
+        if (quantity < quantityDisp) {
+            setQuantityDisp(quantity);
+        }
+    }, [quantity, quantityDisp])
     const handleQuantityChange = (event) => {
         setQuantity(event.target.value);
+    }
+
+    const handleQuantityDispChange = (event) => {
+        setQuantityDisp(event.target.value);
     }
 
     const handleBlur = (event) => {
@@ -21,61 +33,7 @@ const InstructionsQuantity = (props) => {
         let sigArr = text.match(/[a-zA-Z0-9]+/gi)
 
         if (text) {
-            sigArr = sigArr.map((element) => {
-                switch (element) {
-                    case 'BID':
-                        element = "TWICE DAILY";
-                        break;
-                    case 'TID':
-                        element = "THREE TIMES DAILY";
-                        break;
-                    case 'QID':
-                        element = 'FOUR TIMES DAILY';
-                        break;
-                    case 'TK':
-                        element = 'TAKE';
-                        break;
-                    case 'T':
-                        element = 'TABLET';
-                        break;
-                    case 'PO':
-                        element = "BY MOUTH";
-                        break;
-                    case 'QD':
-                        element = "EVERY DAY";
-                        break;
-                    case 'Q':
-                        element = "EVERY";
-                        break;
-                    case 'PRN':
-                        element = "AS NEEDED";
-                        break;
-                    case 'UTD':
-                        element = "AS DIRECTED";
-                        break;
-                    case 'H':
-                        element = "HOURS";
-                        break;
-                    case 'AA':
-                        element = "TO THE AFFECTED AREA";
-                        break;
-                    case 'APP':
-                        element = "APPLY";
-                        break;
-                    case 'AD':
-                        element = "RIGHT EAR";
-                        break;
-                    case 'AS':
-                        element = 'LEFT EAR';
-                        break;
-                    case 'AU':
-                        element = 'BOTH EARS';
-                        break;
-                    default:
-                        return element;
-                }
-                return element;
-            });
+            sigArr = sigList(sigArr);
             setSigs(sigArr.join(" "));
         } else {
             setSigs(text)
@@ -97,7 +55,7 @@ const InstructionsQuantity = (props) => {
                     <input type={"number"} value={quantity} onChange={handleQuantityChange} min={0}></input>
                 </h4>
                 <h4>QuantityDisp:
-                    <input type={"number"} min={0} max={quantity} defaultValue={quantity}></input>
+                    <input type={"number"} min={0} max={quantity} value={quantityDisp} onChange={handleQuantityDispChange}></input>
                 </h4>
             </div>
             <textarea
