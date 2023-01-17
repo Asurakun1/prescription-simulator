@@ -17,7 +17,7 @@ const Prescriber = (props) => {
                     </div>
                     <div>
                         <p>Phone: </p>
-                        <p>{props.prescriber.Phone}</p>
+                        <p><strong>{props.prescriber.Phone}</strong></p>
                     </div>
                 </div>
             </div>

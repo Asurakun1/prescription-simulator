@@ -64,7 +64,11 @@ const Window = () => {
                              */
                         }
                         <LeftHandWindow patient={patients[patientId]} setID={setPatientId} />
-                        <RightHandWindow data={patients[patientId].Drug_info}/>
+                        <RightHandWindow 
+                            data={patients[patientId].Drug_info} 
+                            insurance={patients[patientId].Patient_info.insurance}
+                            prescriber={patients[patientId].Prescriber_info}
+                            />
                     </div>
                     :
                     <h1 className='loading'>Loading... F1 window</h1>

@@ -8,7 +8,7 @@ const RightHandWindow = (props) => {
         <div className='split right'>
             <DrugInfo drugname={props.data.Drug_Name} drugform={props.data.Drug_Form}/>
             <InstructionsQuantity quantity={props.data.Quantity} sig={props.data.Sig}/>
-            <DoctorInfoIns />
+            <DoctorInfoIns prescriber={props.prescriber} insurance={props.insurance}/>
         </div>
     );
 }
