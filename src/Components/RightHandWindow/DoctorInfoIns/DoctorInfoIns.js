@@ -44,12 +44,9 @@ const DoctorInfoIns = (props) => {
         setNPI(event.target.value.toUpperCase())
     }
 
-    const handleNPIblur = (event) => {
-        if (NPI) {
-            setDoctor(props.prescriber.find(element => event.target.value === element.NPI || event.target.value === element.DEA));
-        } else {
-            setDoctor();
-        }
+    const handleNPIblur = () => {
+        NPI ? setDoctor(props.prescriber.find(element => NPI === element.NPI || NPI === element.DEA))
+            : setDoctor();
     }
 
     const handleFirstName = (event) => {
@@ -76,7 +73,7 @@ const DoctorInfoIns = (props) => {
                 </h4>
 
                 <h4>NPI:
-                    <input type={"text"} onChange={handleNPIChange} value={NPI} maxLength={10} onBlur={handleNPIblur}></input>
+                    <input type="text" onChange={handleNPIChange} value={NPI} maxLength={10} onBlur={handleNPIblur}></input>
                 </h4>
             </div>
 
@@ -84,11 +81,11 @@ const DoctorInfoIns = (props) => {
             <div className='doc-name'>
                 <h4>
                     First name:
-                    <input type={"text"} onChange={handleFirstName} value={docFirstName} onBlur={handleBlurName} />
+                    <input type="text" onChange={handleFirstName} value={docFirstName} onBlur={handleBlurName} />
                 </h4>
                 <h4>
                     Last name:
-                    <input type={"text"} onChange={handleLastName} value={docLastName} onBlur={handleBlurName} />
+                    <input type="text" onChange={handleLastName} value={docLastName} onBlur={handleBlurName} />
                 </h4>
             </div>
 
