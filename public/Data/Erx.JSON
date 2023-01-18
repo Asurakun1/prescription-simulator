@@ -14,6 +14,8 @@
         },
         "Prescriber_info": {
             "Prescriber": "John Doe",
+            "FirstName": "John",
+            "LastName": "Doe",
             "Prescriber_Address": "123 Main St, Suite 200, Anytown USA 12345",
             "Fax": "555-555-5555",
             "Phone": "555-555-5555",
@@ -26,7 +28,8 @@
             "Quantity": 40,
             "Sig": "tk 2 t po q 12 h x 10 days ",
             "Refills": 1,
-            "Substitution": "Substitution Allowed"
+            "Substitution": "Substitution Allowed",
+            "Controlled": "False"
         }
         
     },
@@ -45,6 +48,8 @@
         },
         "Prescriber_info": {
             "Prescriber": "Michael Johnson",
+            "FirstName": "Michael",
+            "LastName": "Johnson",
             "Prescriber_Address": "789 Park Ave, Suite 100, Anytown USA 54321",
             "Fax": "535-521-6541",
             "Phone": "535-521-6543",
@@ -57,7 +62,8 @@
             "Quantity": 30,
             "Sig": "1 tab po qd",
             "Refills": 3,
-            "Substitution": "Substitution Allowed"
+            "Substitution": "Substitution Allowed",
+            "Controlled": "False"
         }
     },
 
@@ -76,6 +82,8 @@
         },
         "Prescriber_info": {
             "Prescriber": "Robert Smith",
+            "FirstName": "Robert",
+            "LastName": "Smith",
             "Prescriber_Address": "789 Elm St, Suite 100, Anytown USA 54321",
             "Fax": "451-784-8854",
             "Phone": "451-784-8853",
@@ -88,7 +96,8 @@
             "Quantity": 30,
             "Sig": "Tk 1 tab po qd x 2 wks, then increase to 2 tab po qd if tolerated",
             "Refills": 3,
-            "Substitution": "Substitution Allowed"
+            "Substitution": "Substitution Allowed",
+            "Controlled": "False"
         }
     },
     {
@@ -105,7 +114,9 @@
             ]
         },
         "Prescriber_info": {
-            "Prescriber": "Dr. John Thompson",
+            "Prescriber": "John Thompson",
+            "FirstName": "John",
+            "LastName": "Thompson",
             "Prescriber_Address": "111 Main St, Suite 400, Anytown USA 67890",
             "Fax": "567-676-6654",
             "Phone": "567-676-6653",
@@ -118,7 +129,8 @@
             "Quantity": 30,
             "Sig": "Tk 1 tab po qd x 4 wks, then taper to 1 tab po qod x 2 wks",
             "Refills": 2,
-            "Substitution": "Substitution Allowed"
+            "Substitution": "Substitution Allowed",
+            "Controlled": "False"
         }
     }
     

@@ -1,6 +1,6 @@
 import './Window.css'
-import RightHandWindow from '../RightHandWindow/RightHandWindow';
-import LeftHandWindow from '../LeftHandWindow/LeftHandWindow';
+import Program from './Program';
+
 import { useState, useEffect } from 'react';
 const Window = () => {
     const [patients, setPatients] = useState();
@@ -52,7 +52,7 @@ const Window = () => {
             }
             {
                 patients ?
-                    <div className='inner-window'>
+                    <div>
                         {
                             /*
                             This section will hold components of the prescription image on the left hand side
@@ -63,12 +63,7 @@ const Window = () => {
                                 instructions or sigs,
                              */
                         }
-                        <LeftHandWindow patient={patients[patientId]} setID={setPatientId} />
-                        <RightHandWindow 
-                            data={patients[patientId].Drug_info} 
-                            insurance={patients[patientId].Patient_info.insurance}
-                            prescriber={patients[patientId].Prescriber_info}
-                            />
+                        <Program patients={patients} patientId={patientId}/>
                     </div>
                     :
                     <h1 className='loading'>Loading... F1 window</h1>
