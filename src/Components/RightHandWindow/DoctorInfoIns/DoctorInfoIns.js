@@ -24,11 +24,9 @@ const DoctorInfoIns = (props) => {
     }, [doctor, props.controlled])
 
     const handleChange = (event) => {
-        if (!event.target.value.match(/[a-zA-Z]/g)) {
-            const value = event.target.value;
-            const formatValue = value.replace(/\D/g, '').replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
-            setPhoneNumber(formatValue);
-        }
+        const value = event.target.value;
+        const formatValue = value.replace(/\D/g, '').replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
+        setPhoneNumber(formatValue);
     }
 
     const handlePhoneBlur = (event) => {
@@ -74,7 +72,7 @@ const DoctorInfoIns = (props) => {
             }
             <div className='doc-info'>
                 <h4>Phone:
-                    <input type="tel" onChange={handleChange} value={phoneNumber} maxLength={12} onBlur={handlePhoneBlur}/>
+                    <input type="tel" onChange={handleChange} value={phoneNumber} maxLength={12} onBlur={handlePhoneBlur} />
                 </h4>
 
                 <h4>NPI:
