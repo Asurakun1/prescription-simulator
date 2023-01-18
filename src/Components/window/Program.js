@@ -40,15 +40,21 @@ const Program = (props) => {
         return `${first3digit}-${next3digit}-${randomLast4digit}`;
     }
 
-    const patients = props.patients.map(element => {
-        const docPhone = generatePhoneNumber();
-        element.Prescriber_info.NPI = generateNPI().toString();
-        element.Prescriber_info.DEA = generateDEA(element.Prescriber_info.LastName).toString();
-        element.Prescriber_info.Fax = docPhone.substring(0, docPhone.length - 1) + (Math.floor(Math.random() * 9) + 1);
-        element.Prescriber_info.Phone = docPhone;
-        element.Patient_info.Patient_Phone = generatePhoneNumber();
-        return element;
-    });
+    const [patients, setPatients] = useState(props.patients);
+
+
+    useEffect(() => {
+        setPatients(prevPatients => prevPatients.map(element => {
+            const docPhone = generatePhoneNumber();
+            element.Prescriber_info.NPI = generateNPI().toString();
+            element.Prescriber_info.DEA = generateDEA(element.Prescriber_info.LastName).toString();
+            element.Prescriber_info.Fax = docPhone.substring(0, docPhone.length - 1) + (Math.floor(Math.random() * 9) + 1);
+            element.Prescriber_info.Phone = docPhone;
+            element.Patient_info.Patient_Phone = generatePhoneNumber();
+            return element;
+        }));
+    },[])
+
     const [patientId, setPatientId] = useState(0);
 
     const prescriberList = patients.map(element => {
