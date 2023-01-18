@@ -73,7 +73,7 @@ const DoctorInfoIns = (props) => {
                 </h4>
 
                 <h4>NPI:
-                    <input type="text" onChange={handleNPIChange} value={NPI} maxLength={10} onBlur={handleNPIblur}></input>
+                    <input className='npi' type="text" onChange={handleNPIChange} value={NPI} maxLength={10} onBlur={handleNPIblur}></input>
                 </h4>
             </div>
 

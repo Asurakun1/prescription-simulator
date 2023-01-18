@@ -15,7 +15,11 @@
 }
 
 .prescriber .doc-info h4 input {
-    max-width: 6.4vw;
+    max-width: 4.8vw;
+}
+
+.prescriber .doc-info .npi{
+    max-width: 4.3vw;
 }
 
 .prescriber .doc-name h4 input {
