@@ -4,7 +4,6 @@ import Program from './Program';
 import { useState, useEffect } from 'react';
 const Window = () => {
     const [patients, setPatients] = useState();
-    const [patientId, setPatientId] = useState(0);
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -22,22 +21,6 @@ const Window = () => {
             fetchData();
         }, 500)
     }, [])
-
-    useEffect(() => {
-        const handleF1Key = (event) => {
-            let currPatient = patientId;
-            if (event.key === 'F1') {
-                event.preventDefault();
-                if (patients) {
-                    setPatientId((currPatient + 1) % patients.length)
-                }
-            }
-        }
-        document.addEventListener('keydown', handleF1Key);
-        return () => {
-            document.removeEventListener('keydown', handleF1Key);
-        }
-    }, [patients, patientId])
     return (
         <div className='window'>
             {
@@ -63,7 +46,7 @@ const Window = () => {
                                 instructions or sigs,
                              */
                         }
-                        <Program patients={patients} patientId={patientId}/>
+                        <Program patients={patients}/>
                     </div>
                     :
                     <h1 className='loading'>Loading... F1 window</h1>
