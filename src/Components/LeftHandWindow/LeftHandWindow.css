@@ -4,5 +4,6 @@
 }
 
 .left .editor{
-    border: 1px solid black;
+    border-top: 1px solid black;
+    min-height: 24.5vh;
 }

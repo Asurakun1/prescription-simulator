@@ -47,7 +47,7 @@ const Program = (props) => {
 
     return (
         <div className="inner-window">
-            <LeftHandWindow patient={patients[patientId]} setID={setPatientId} />
+            <LeftHandWindow patient={patients[patientId]} setID={setPatientId} currentID={patientId} />
             <RightHandWindow
                 data={patients[patientId].Drug_info}
                 insurance={patients[patientId].Patient_info.insurance}

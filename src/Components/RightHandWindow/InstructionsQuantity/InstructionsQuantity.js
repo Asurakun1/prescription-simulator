@@ -7,13 +7,13 @@ const InstructionsQuantity = (props) => {
     const [preSigs, setPreSigs] = useState("");
     const [quantity, setQuantity] = useState();
     const [quantityDisp, setQuantityDisp] = useState();
-    const [date, setDate] = useState();
+    const [date, setDate] = useState('');
 
     useEffect(() => {
         setQuantity(props.quantity);
         setQuantityDisp(props.quantity);
-        setSigs("");
-        setPreSigs("");
+        setSigs(``);
+        setPreSigs(``);
     }, [props.quantity, props.sig]);
 
     useEffect(() => {
