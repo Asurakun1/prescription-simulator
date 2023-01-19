@@ -7,6 +7,7 @@ const InstructionsQuantity = (props) => {
     const [preSigs, setPreSigs] = useState("");
     const [quantity, setQuantity] = useState();
     const [quantityDisp, setQuantityDisp] = useState();
+    const [date, setDate] = useState();
 
     useEffect(() => {
         setQuantity(props.quantity);
@@ -48,8 +49,18 @@ const InstructionsQuantity = (props) => {
         setSigs(event.target.value);
         setPreSigs(event.target.value);
     }
+
+    const handleDateChange = (event) => {
+        const regex = /[a-zA-Z]/g
+        if (!regex.test(event.target.value)) {
+            setDate(event.target.value);
+        }
+    }
     return (
         <div className='info instruct-sigs'>
+            <div className='days date'>
+                <h4>Date: <input type={"text"} maxLength={10} onChange={handleDateChange} value={date} /></h4>
+            </div>
             <div className='quantity'>
                 <h4>Quantity:
                     <input type={"number"} value={quantity} onChange={handleQuantityChange} min={0}></input>
@@ -67,6 +78,7 @@ const InstructionsQuantity = (props) => {
             </textarea>
             <div className='days'>
                 <h4>Days:<input type={"number"} min={1}></input></h4>
+                <h4>Refills: <input className='refills' type={"number"} min={0} /></h4>
             </div>
         </div>
     );

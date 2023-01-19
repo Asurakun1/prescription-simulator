@@ -33,3 +33,16 @@
 .instruct-sigs .quantity{
     display: flex;
 }
+
+.instruct-sigs .days .refills{
+    max-width: 2vw;
+}
+
+.instruct-sigs .date{
+    max-height: 4vh;
+}
+
+.instruct-sigs .date h4 input{
+    min-width: 5vw;
+    font-size: 1rem;
+}

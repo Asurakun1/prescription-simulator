@@ -51,6 +51,12 @@ const Program = (props) => {
             element.Prescriber_info.Fax = docPhone.substring(0, docPhone.length - 1) + (Math.floor(Math.random() * 9) + 1);
             element.Prescriber_info.Phone = docPhone;
             element.Patient_info.Patient_Phone = generatePhoneNumber();
+
+            while(element.Prescriber_info.Fax === element.Prescriber_info.Phone){
+                const newPhone = generatePhoneNumber();
+                element.Prescriber_info.Fax = newPhone.substring(0, docPhone.length - 1) + (Math.floor(Math.random() * 9) + 1);
+                element.Prescriber_info.Phone = newPhone;
+            }
             return element;
         }));
     },[])
