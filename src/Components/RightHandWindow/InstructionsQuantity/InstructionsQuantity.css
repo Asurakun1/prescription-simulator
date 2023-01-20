@@ -39,10 +39,16 @@
 }
 
 .instruct-sigs .date{
+    flex-direction: column;
     max-height: 4vh;
 }
 
 .instruct-sigs .date h4 input{
     min-width: 5vw;
     font-size: 1rem;
+}
+
+.instruct-sigs .days{
+    display: flex;
+    gap: 0.5vw;
 }
