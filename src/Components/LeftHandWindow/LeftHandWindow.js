@@ -7,7 +7,7 @@ const LeftHandWindow = (props) => {
         <div className='split left'>
             <Rx patient={props.patient} />
             <div className='editor'>
-                <Cycle />
+                <Cycle setID={props.setID} currentID={props.currentID} RxLength={props.RxLength}/>
             </div>
         </div>
     )
