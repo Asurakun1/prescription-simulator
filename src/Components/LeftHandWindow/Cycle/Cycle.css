@@ -1,4 +1,4 @@
-.cycle{
+.cycle {
     min-height: 50%;
     display: flex;
     flex-direction: column;
@@ -6,12 +6,13 @@
     align-items: center;
 }
 
-.cycle .buttons{
+.cycle .buttons {
     display: flex;
     gap: 1vw;
 }
 
-.cycle .buttons button{
+.cycle .buttons button {
     font-size: 1.1rem;
     font-weight: bold;
+    cursor: pointer;
 }

@@ -3,11 +3,11 @@ import { useEffect, useState } from 'react';
 
 const DoctorInfoIns = (props) => {
 
-    const [phoneNumber, setPhoneNumber] = useState('')
-    const [NPI, setNPI] = useState('')
+    const phoneNumber = props.phoneNumber, setPhoneNumber = props.setPhoneNumber;
+    const NPI = props.NPI, setNPI = props.setNPI;
     const [doctor, setDoctor] = useState();
-    const [docFirstName, setDocFirstName] = useState('');
-    const [docLastName, setDocLastName] = useState('');
+    const docFirstName = props.docFirstName, setDocFirstName = props.setDocFirstName;
+    const docLastName = props.docLastName, setDocLastName = props.setDocLastName;
 
     useEffect(() => {
         if (doctor) {
@@ -21,7 +21,7 @@ const DoctorInfoIns = (props) => {
             setNPI('');
             setPhoneNumber('');
         }
-    }, [doctor, props.controlled])
+    }, [doctor, props.controlled, setDocFirstName, setDocLastName, setNPI, setPhoneNumber])
 
     const handleChange = (event) => {
         const value = event.target.value;

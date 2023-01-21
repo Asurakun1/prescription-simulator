@@ -1,26 +1,28 @@
 import './InstructionsQuantity.css';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { sigList } from './SigList';
 
 const InstructionsQuantity = (props) => {
-    const [sigs, setSigs] = useState("");
-    const [preSigs, setPreSigs] = useState("");
-    const [quantity, setQuantity] = useState();
-    const [quantityDisp, setQuantityDisp] = useState();
-    const [date, setDate] = useState('');
+    const sigs = props.sigs, setSigs = props.setSigs;
+    const preSigs = props.preSigs, setPreSigs = props.setPreSigs;
+    const quantity = props.QuantityInput, setQuantity = props.setQuantityInput;
+    const quantityDisp = props.quantityDisp, setQuantityDisp = props.setQuantityDisp;
+    const date = props.date, setDate = props.setDate;
+    const days = props.days, setDays = props.setDays;
+    const refills = props.refills, setRefills = props.setRefills;
 
     useEffect(() => {
         setQuantity(props.quantity);
         setQuantityDisp(props.quantity);
         setSigs(``);
         setPreSigs(``);
-    }, [props.quantity, props.sig]);
+    }, [props.quantity, props.sig, setSigs, setPreSigs, setQuantity, setQuantityDisp]);
 
     useEffect(() => {
         if (quantity < quantityDisp) {
             setQuantityDisp(quantity);
         }
-    }, [quantity, quantityDisp])
+    }, [quantity, quantityDisp, setQuantityDisp])
     const handleQuantityChange = (event) => {
         setQuantity(event.target.value);
     }
@@ -31,7 +33,7 @@ const InstructionsQuantity = (props) => {
 
     const handleBlur = (event) => {
         const text = event.target.value.toUpperCase();
-        let sigArr = text.match(/[a-zA-Z0-9]+/gi)
+        let sigArr = text.match(/[\w\d]+/g)
 
         if (text) {
             sigArr = sigList(sigArr);
@@ -56,6 +58,14 @@ const InstructionsQuantity = (props) => {
             setDate(event.target.value);
         }
     }
+
+    const handleDayChange = (event) => {
+        setDays(event.target.value);
+    }
+
+    const handleRefillChange = (event) => {
+        setRefills(event.target.value);
+    }
     return (
         <div className='info instruct-sigs'>
             <div className='days date'>
@@ -77,8 +87,8 @@ const InstructionsQuantity = (props) => {
             >
             </textarea>
             <div className='days'>
-                <h4>Days:<input type={"number"} min={1}></input></h4>
-                <h4>Refills: <input className='refills' type={"number"} min={0} /></h4>
+                <h4>Days:<input type={"number"} min={1} onChange={handleDayChange} value={days}></input></h4>
+                <h4>Refills: <input className='refills' type={"number"} min={0} onChange={handleRefillChange} value={refills} /></h4>
             </div>
         </div>
     );
