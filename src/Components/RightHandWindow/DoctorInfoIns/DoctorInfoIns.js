@@ -69,11 +69,11 @@ const DoctorInfoIns = (props) => {
             }
             <div className='doc-info'>
                 <h4>Phone:
-                    <input type="tel" onChange={handleChange} value={phoneNumber} maxLength={12} onBlur={handlePhoneBlur} />
+                    <input id='phone-verify' type="tel" onChange={handleChange} value={phoneNumber} maxLength={12} onBlur={handlePhoneBlur} />
                 </h4>
 
                 <h4>NPI:
-                    <input className='npi' type="text" onChange={handleNPIChange} value={NPI} maxLength={10} onBlur={handleNPIblur}></input>
+                    <input id='npi-verify' className='npi' type="text" onChange={handleNPIChange} value={NPI} maxLength={10} onBlur={handleNPIblur}></input>
                 </h4>
             </div>
 
@@ -81,11 +81,11 @@ const DoctorInfoIns = (props) => {
             <div className='doc-name'>
                 <h4>
                     First name:
-                    <input type="text" onChange={handleFirstName} value={docFirstName} onBlur={handleBlurName} />
+                    <input id='first-name-verify' type="text" onChange={handleFirstName} value={docFirstName} onBlur={handleBlurName} />
                 </h4>
                 <h4>
                     Last name:
-                    <input type="text" onChange={handleLastName} value={docLastName} onBlur={handleBlurName} />
+                    <input id='last-name-verify' type="text" onChange={handleLastName} value={docLastName} onBlur={handleBlurName} />
                 </h4>
             </div>
 

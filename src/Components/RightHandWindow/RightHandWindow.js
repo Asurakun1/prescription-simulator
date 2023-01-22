@@ -11,21 +11,16 @@ const RightHandWindow = (props) => {
     const [date, setDate] = useState('');
     const [sigs, setSigs] = useState("");
     const [preSigs, setPreSigs] = useState("");
-    const [quantity, setQuantity] = useState();
-    const [quantityDisp, setQuantityDisp] = useState();
+    const [quantity, setQuantity] = useState(0);
+    const [quantityDisp, setQuantityDisp] = useState(0);
     const [days, setDays] = useState();
-    const [refills, setRefills] = useState();
+    const [refills, setRefills] = useState(0);
 
     const [phoneNumber, setPhoneNumber] = useState('')
     const [NPI, setNPI] = useState('')
     const [docFirstName, setDocFirstName] = useState('');
     const [docLastName, setDocLastName] = useState('');
 
-    
-    console.log(
-        date, sigs, preSigs, quantity, quantityDisp, days, refills
-    )
-    
     return (
         <div className='split right'>
             <DrugInfo
@@ -67,7 +62,21 @@ const RightHandWindow = (props) => {
                 setDocLastName={setDocLastName}
 
             />
-            <FillToClose />
+            <FillToClose 
+                patientDoctor={props.patientDoctor}
+                drugName={drugName} 
+                data={props.data}
+                date={props.date}
+                dateInput={date}
+                quantity={quantity}
+                quantityDisp={quantityDisp}
+                refills={refills}
+                phoneNumber={phoneNumber}
+                NPI={NPI}
+                docFirstName={docFirstName}
+                docLastName={docLastName}
+
+                />
         </div>
     );
 }

@@ -69,14 +69,14 @@ const InstructionsQuantity = (props) => {
     return (
         <div className='info instruct-sigs'>
             <div className='days date'>
-                <h4>Date: <input type={"text"} maxLength={10} onChange={handleDateChange} value={date} /></h4>
+                <h4>Date: <input id='date-verify' type={"text"} maxLength={10} onChange={handleDateChange} value={date} /></h4>
             </div>
             <div className='quantity'>
                 <h4>Quantity:
-                    <input type={"number"} value={quantity} onChange={handleQuantityChange} min={0}></input>
+                    <input type={"number"} id='quantity-verify' value={quantity} onChange={handleQuantityChange} min={0}></input>
                 </h4>
                 <h4>QuantityDisp:
-                    <input type={"number"} min={0} max={quantity} value={quantityDisp} onChange={handleQuantityDispChange}></input>
+                    <input type={"number"} id='quantitydisp-verify' min={0} max={quantity} value={quantityDisp} onChange={handleQuantityDispChange}></input>
                 </h4>
             </div>
             <textarea
@@ -87,8 +87,8 @@ const InstructionsQuantity = (props) => {
             >
             </textarea>
             <div className='days'>
-                <h4>Days:<input type={"number"} min={1} onChange={handleDayChange} value={days}></input></h4>
-                <h4>Refills: <input className='refills' type={"number"} min={0} onChange={handleRefillChange} value={refills} /></h4>
+                <h4>Days:<input type={"number"} id='days-verify' min={1} onChange={handleDayChange} value={days}></input></h4>
+                <h4>Refills: <input className='refills' id='refills-verify' type={"number"} min={0} onChange={handleRefillChange} value={refills} /></h4>
             </div>
         </div>
     );

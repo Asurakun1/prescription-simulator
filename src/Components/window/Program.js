@@ -49,9 +49,11 @@ const Program = (props) => {
         <div className="inner-window">
             <LeftHandWindow patient={patients[patientId]} setID={setPatientId} currentID={patientId} RxLength={patients.length}/>
             <RightHandWindow
+                date={patients[patientId].Date}
                 data={patients[patientId].Drug_info}
                 insurance={patients[patientId].Patient_info.insurance}
                 prescriber={prescriberList}
+                patientDoctor={patients[patientId].Prescriber_info}
             />
         </div>
     );

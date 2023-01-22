@@ -17,7 +17,7 @@ const DrugInfo = (props) => {
     return (
         <div className='info drug-info'>
             <h4 className='drug-name'>Drug Name:
-                {<input type="search" onChange={handleChange} value={drugName} list="drug-name"></input>}
+                {<input id='drug-name-verify' type="search" onChange={handleChange} value={drugName} list="drug-name"></input>}
             </h4>
         </div>
     );
