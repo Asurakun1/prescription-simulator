@@ -40,7 +40,7 @@
 
 .instruct-sigs .date{
     flex-direction: column;
-    max-height: 4vh;
+    max-height: 6vh;
 }
 
 .instruct-sigs .date h4 input{
