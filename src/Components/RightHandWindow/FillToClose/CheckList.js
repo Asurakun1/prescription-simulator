@@ -18,6 +18,13 @@ const correctInput = (elementID) => {
     }, 1000);
 }
 
+const normalize = (elementID) => {
+    setTimeout(() => {
+        elementID.style.backgroundColor = '';
+        elementID.style.color = '';
+    }, 6000);
+}
+
 
 const checkSigs = (userSig, untranslatedSig, correct, property, elementID) => {
     if (!CheckSig(userSig, untranslatedSig)) {
@@ -27,6 +34,7 @@ const checkSigs = (userSig, untranslatedSig, correct, property, elementID) => {
         correct[property] = true;
         correctInput(elementID);
     }
+    normalize(elementID);
 }
 
 const checkName = (NameInput, Name, correct, property, elementID) => {
@@ -38,6 +46,7 @@ const checkName = (NameInput, Name, correct, property, elementID) => {
         correct[property] = true;
         correctInput(elementID);
     }
+    normalize(elementID);
 }
 const checkQuantity = (QuantityInput, QuantityToCompare, correct, property, elementID) => {
     if (parseInt(QuantityInput) !== QuantityToCompare) {
@@ -47,6 +56,7 @@ const checkQuantity = (QuantityInput, QuantityToCompare, correct, property, elem
         correct[property] = true;
         correctInput(elementID);
     }
+    normalize(elementID);
 }
 
 export { buttonCheck, checkName, checkQuantity, checkSigs }

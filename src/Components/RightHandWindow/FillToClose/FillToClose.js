@@ -43,7 +43,12 @@ const FillToClose = (props) => {
         checkName(props.docFirstName, props.patientDoctor.FirstName, correct, 'First_Name', firstName);
         checkName(props.docLastName, props.patientDoctor.LastName, correct, 'Last_Name', lastName);
         (Object.values(correct).some(Element => !Element)) ?
-            buttonCheck('red', setCheck) : buttonCheck('lime', setCheck);
+            buttonCheck('red', setCheck)
+            : buttonCheck('lime', setCheck);
+
+        setTimeout(() => {
+            buttonCheck('', setCheck);
+        }, 5000)
 
     }
 
