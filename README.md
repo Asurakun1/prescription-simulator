@@ -4,6 +4,9 @@ This web app is a mock design of walgreens intercom plus prescription entry wind
 The purpose of this application is to design a way to reinforce training for
 pharmacy technicians and pharmacy typists
 
+## Current state of the project:
+https://icplus-rx-simulator.netlify.app/
+
 ## what you will expect
 
 Just as if you were on the job. You are expected to type F1's and calculate the appropiate day supply
@@ -19,5 +22,8 @@ with the correct prescriber information and submit with the patients insurance p
 Recommended resolution is 1920x1080
 I cannot gurantee that anything less than that will display correctly
 
-## Current state of the project:
-https://icplus-rx-simulator.netlify.app/
+### updates:
+
+01/21/2023: Drug info, quantity, phone, NPI, first name, last name can be now be checked if they are either correct or incorrect
+
+01/22/2023: Sigs can now be checked if they are either correct or incorrect
