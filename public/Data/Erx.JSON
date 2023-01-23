@@ -26,7 +26,7 @@
             "Drug_Name": "Amoxicillin 500mg",
             "Drug_Form": "Tablet",
             "Quantity": 40,
-            "Sig": "tk 2 t po q 12 h x 10 days ",
+            "Sig": "tk 2 t po q 12 h x 10 days",
             "Refills": 1,
             "Substitution": "Substitution Allowed",
             "Controlled": "False"

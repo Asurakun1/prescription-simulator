@@ -1,6 +1,6 @@
 import './FillToClose.css';
 import { useState } from 'react';
-import { buttonCheck, checkName, checkQuantity } from './CheckList';
+import { buttonCheck, checkName, checkQuantity, checkSigs } from './CheckList';
 
 const FillToClose = (props) => {
 
@@ -14,6 +14,7 @@ const FillToClose = (props) => {
     const npi = document.getElementById('npi-verify');
     const firstName = document.getElementById('first-name-verify');
     const lastName = document.getElementById('last-name-verify');
+    const instructions = document.getElementById('sigs-verify');
     //const QuantityDisp = document.getElementById('quantitydisp-verify');
 
     const correct = {
@@ -21,6 +22,7 @@ const FillToClose = (props) => {
         "Date": '',
         "Quantity": '',
         "QuantityDisp": '',
+        "Sigs": '',
         "Days": '',
         "Refills": '',
         "Phone": '',
@@ -34,6 +36,7 @@ const FillToClose = (props) => {
         checkName(props.drugName.trim(), rxDrugName, correct, 'DrugName', drugInfoComp);
         checkName(props.dateInput, props.date, correct, 'Date', date);
         checkQuantity(props.quantity, props.data.Quantity, correct, 'Quantity', quantity);
+        checkSigs(props.userSig, props.sig, correct, 'Sigs', instructions);
         checkQuantity(props.refills, props.data.Refills, correct, 'Refills', refills);
         checkName(props.phoneNumber, props.patientDoctor.Phone, correct, 'Phone', phone);
         checkName(props.NPI, props.patientDoctor.NPI, correct, 'NPI', npi);

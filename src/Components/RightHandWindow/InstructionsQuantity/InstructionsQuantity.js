@@ -33,7 +33,7 @@ const InstructionsQuantity = (props) => {
 
     const handleBlur = (event) => {
         const text = event.target.value.toUpperCase();
-        let sigArr = text.match(/[\w\d]+/g)
+        let sigArr = text.trim().split(' ');
 
         if (text) {
             sigArr = sigList(sigArr);
@@ -84,6 +84,7 @@ const InstructionsQuantity = (props) => {
                 onBlur={handleBlur}
                 onChange={handleChange}
                 value={sigs}
+                id={'sigs-verify'}
             >
             </textarea>
             <div className='days'>

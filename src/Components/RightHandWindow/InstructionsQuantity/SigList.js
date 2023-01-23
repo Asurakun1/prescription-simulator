@@ -1,6 +1,6 @@
 export const sigList = (textArray) => {
     const arr = textArray.map((element) => {
-        switch (element) {
+        switch (element.toUpperCase()) {
 
             case 'ATN':
                 element = 'AT NIGHT';

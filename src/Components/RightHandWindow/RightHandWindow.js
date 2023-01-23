@@ -75,6 +75,8 @@ const RightHandWindow = (props) => {
                 NPI={NPI}
                 docFirstName={docFirstName}
                 docLastName={docLastName}
+                userSig={sigs}
+                sig={props.data.Sig}
 
                 />
         </div>
