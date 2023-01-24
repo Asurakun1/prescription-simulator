@@ -1,7 +1,7 @@
 import { sigList } from '../InstructionsQuantity/SigList';
 
 const translateSig = (sig) => {
-    let translated = sigList(sig.match(/[\w\d]+/g));
+    let translated = sigList(sig.toUpperCase().match(/[\w\d]+/g));
 
     translated = translated.map((sig) => {
         switch (sig) {
