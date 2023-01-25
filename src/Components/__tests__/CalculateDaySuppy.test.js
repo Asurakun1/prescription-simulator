@@ -1,22 +1,25 @@
-import { tabletExtract, hoursExtract, convertIntoExtractableData } from '../RightHandWindow/FillToClose/CalculateDays';
+import { convertIntoExtractableData } from '../RightHandWindow/FillToClose/CalculateDays';
 
 describe('Day Supply Calculation', () => {
 
     test('it will split the sig into separate data points', () => {
-        const sig = `tk 2 t po q 12 h x 10 days`;
+        const sig = `1 tab po qd`;
 
-        expect(convertIntoExtractableData(sig)).toBe(['TAKE 2 TABLET', 'BY MOUTH EVERY 12 HOURS', 'FOR 10 DAYS']);
+        expect(convertIntoExtractableData(sig)).toStrictEqual({
+            quantity: 1
+        })
 
-    })
+        const sig2 = `tk 2 t po qd`;
+        expect(convertIntoExtractableData(sig2)).toStrictEqual({
+            quantity: 2
+        })
 
-    test('it will extract the tablet information', () => {
-        const sig = `tk 2 t po q 12 h x 10 days`;
+        const sig3 = `tk 4 t po qd x 10 days`;
 
-        expect(tabletExtract(sig)).toBe(2);
+        expect(convertIntoExtractableData(sig3)).toStrictEqual({
+            quantity: 4,
+            duration: 10
+        });
     });
-
-    test('it will extract the hours information', () => {
-        const sig = `tk 2 t po q 12 h x 10 days`;
-    })
 
 })

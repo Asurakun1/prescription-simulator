@@ -3,27 +3,33 @@ import { translateSig } from "./CheckSigs";
 const convertIntoExtractableData = (fullSig) => {
     const translated = translateSig(fullSig);
 
-    return translated;
-}
-
-const tabletExtract = (sig) => {
-    const translated = (translateSig(sig));
-
-    if(translated.includes('TABLET')){
-        const number = translated.split('TABLET')[0].split(' ').filter(element => parseInt(element))
-        return parseInt(number);
+    let qty = 0;
+    let duration = 0;
+    switch (true) {
+        case translated.includes('TABLET'):
+                qty = translated.split('TABLET')[0].match(/[\d]+/g);
+            break;
+        case translated.includes('DAYS'):
+                duration = translated.split('DAYS')[0].match(/[\d]+/g);
+                duration = duration[duration.length];
     }
-}
 
-const hoursExtract = (sig) => {
-    const translated = (translateSig(sig));
 
-    if(translated.includes('HOURS')){
-        const hours = translated.split('HOURS')[0].split(' ');
-
-        return hours;
+    const extractedData = {
+        quantity: parseInt(qty),
+        frequency: 0,
+        duration: duration
     }
+
+    const filteredData = Object.entries(extractedData).filter(([key, value]) => {
+        return value;
+    });
+
+    const objData = filteredData.reduce((acc, [key, value]) => {
+        acc[key] = value;
+        return acc;
+    }, {});
+    return objData;
 }
 
-
-export {tabletExtract, hoursExtract, convertIntoExtractableData}
+export { convertIntoExtractableData }
