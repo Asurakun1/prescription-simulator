@@ -1,4 +1,4 @@
-import { translateSig, checkUserSigInput, CheckSig } from "../RightHandWindow/FillToClose/CheckSigs";
+import { translateSig, checkUserSigInput, CheckSig, checkAndTranslate } from "../RightHandWindow/FillToClose/CheckSigs";
 
 describe('CheckSig', () => {
     test('It will convert the base sig', () => {
@@ -44,5 +44,11 @@ describe('CheckSig', () => {
         const accepted = CheckSig(userSigInput, sig);
 
         expect(accepted).toBe(false);
+    });
+
+    test('it will complete sigs that appear incomplete', () => {
+        const sig = `1 t po qd`;
+
+        expect(checkAndTranslate(sig)).toBe(`TAKE 1 TABLET BY MOUTH EVERY DAY`);
     });
 });
