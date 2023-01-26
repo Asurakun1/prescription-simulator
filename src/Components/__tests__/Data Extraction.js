@@ -1,6 +1,6 @@
 import { convertIntoExtractableData, sigReducer } from '../RightHandWindow/FillToClose/CalculateDays';
 
-describe('Day Supply Calculation', () => {
+describe('Sig data extractor', () => {
 
     test('it will split the sig into separate data points', () => {
         const sig = `tk 1 tab po qd`;
