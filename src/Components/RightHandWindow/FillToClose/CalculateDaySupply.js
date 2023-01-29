@@ -1,10 +1,49 @@
 
 
 const calculateIndividualDataSets = (arrayObj, qty) => {
-    let arrayOfDatasets = [...arrayObj];
-    let quantityRemain = qty - daySupply(arrayOfDatasets[0], qty);
+    let arrayOfDatasets = Array.isArray(arrayObj) ? [...arrayObj] : arrayObj;
+    let quantity = qty;
+    let daysupp = 0;
 
-    return quantityRemain;
+    Array.isArray(arrayOfDatasets) ?
+        arrayOfDatasets.forEach(element => {
+            daysupp += daySupply(element, quantity);
+            quantity = remainingQuantity(element, quantity);
+        }) :
+        daysupp = daySupply(arrayOfDatasets, quantity);
+
+    return daysupp;
+}
+
+const remainingQuantity = (objData, qty) => {
+
+    let result;
+    const hours = Object.hasOwn(objData, 'hours') ? 24 / objData.hours : '';
+    const weeksToDays = Object.hasOwn(objData, 'weeks') ? objData.weeks * 7 : '';
+    switch (true) {
+
+        case Object.hasOwn(objData, 'hours') && Object.hasOwn(objData, 'weeks'):
+            result = qty - (objData.quantity * hours * weeksToDays);
+            break;
+
+        case Object.hasOwn(objData, 'days') && Object.hasOwn(objData, 'hours'):
+            result = qty - (objData.quantity * hours * objData.days);
+            break;
+
+        case Object.hasOwn(objData, 'weeks'):
+            result = qty - (objData.quantity * weeksToDays);
+            break;
+
+        case Object.hasOwn(objData, 'hours'):
+            result = qty - (objData.quantity * hours);
+            break;
+
+        case Object.hasOwn(objData, 'days'):
+            result = qty - (objData.quantity * objData.days);
+            break;
+    }
+
+    return result;
 }
 
 const daySupply = (objData, qty) => {
@@ -14,7 +53,7 @@ const daySupply = (objData, qty) => {
     const weeksToDays = Object.hasOwn(objData, 'weeks') ? objData.weeks * 7 : '';
     switch (true) {
 
-        
+
         case Object.hasOwn(objData, 'hours') && Object.hasOwn(objData, 'weeks'):
             result = objData.quantity * hours * weeksToDays;
             break;
@@ -40,4 +79,4 @@ const daySupply = (objData, qty) => {
 };
 
 
-export { daySupply, calculateIndividualDataSets};
+export { daySupply, calculateIndividualDataSets, remainingQuantity };

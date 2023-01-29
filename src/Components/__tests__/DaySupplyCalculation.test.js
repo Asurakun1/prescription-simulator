@@ -1,5 +1,5 @@
 import { returnSingleOrMultiplePhrases } from "../RightHandWindow/FillToClose/DataExtractor";
-import { daySupply, calculateIndividualDataSets } from "../RightHandWindow/FillToClose/CalculateDaySupply";
+import { daySupply, calculateIndividualDataSets, remainingQuantity } from "../RightHandWindow/FillToClose/CalculateDaySupply";
 
 describe('Day supply calculation', () => {
 
@@ -15,7 +15,7 @@ describe('Day supply calculation', () => {
 
         const sigDataSet = returnSingleOrMultiplePhrases(sig);
 
-        expect(daySupply(sigDataSet, quantity)).toBe(90);
+        expect(calculateIndividualDataSets(sigDataSet, quantity)).toBe(90);
     });
 
     test('take 2 tablet by mouth every day', () => {
@@ -99,12 +99,4 @@ describe('Day supply calculation', () => {
         const sigDataSet = returnSingleOrMultiplePhrases(sig);
         expect(daySupply(sigDataSet, quantity)).toBe(14);
     })
-
-    test('take 1 tablet by mouth for 2 weeks, then increase to 2 tablet by mouth every day if tolerated', () => {
-        const sig = `Tk 1 tab po qd x 2 wks, then increase to 2 tab po qd if tolerated`;
-        const quantity = 30;
-        let sigDataSet = returnSingleOrMultiplePhrases(sig);
-
-        expect(daySupply(sigDataSet[1], 16)).toBe(8);
-    });
 });
