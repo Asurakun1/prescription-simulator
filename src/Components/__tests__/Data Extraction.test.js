@@ -1,4 +1,4 @@
-import { convertIntoExtractableData, returnSingleOrMultiplePhrases, sigReducer } from '../RightHandWindow/FillToClose/DataExtractor';
+import { returnSingleOrMultiplePhrases, sigReducer } from '../RightHandWindow/FillToClose/DataExtractor';
 
 describe('Sig data extractor', () => {
 
@@ -52,7 +52,7 @@ describe('Sig data extractor', () => {
             weeks: 2
         },
         {
-            increase_quantity: 2
+            quantity: 2
         }
         ]);
     });
@@ -65,11 +65,28 @@ describe('Sig data extractor', () => {
         expect(converted).toStrictEqual([{
             quantity: 1,
             weeks: 4,
-        },{
+        }, {
             taper: 1,
             qod: true,
             weeks: 2
         }]);
+    });
+
+    test('it will parse data from non plural words', () => {
+        const sig = 'tk 1 t po for 1 wk';
+        const sig2 = 'tk 2 t po for 1 day';
+        const convert = returnSingleOrMultiplePhrases(sig);
+        const convert1 = returnSingleOrMultiplePhrases(sig2);
+        expect(convert).toStrictEqual({
+            quantity: 1,
+            weeks: 1
+        });
+
+        expect(convert1).toStrictEqual({
+            quantity: 2,
+            days: 1
+        });
+
     });
 
 })

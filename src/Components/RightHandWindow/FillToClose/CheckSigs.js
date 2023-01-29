@@ -12,7 +12,10 @@ const translateSig = (sig) => {
                 sig = 'TABLET';
                 break;
             case 'WKS':
-                sig = 'WEEKS'
+                sig = 'WEEKS';
+                break;
+            case 'WK':
+                sig = 'WEEK';
                 break;
             default:
                 return sig;

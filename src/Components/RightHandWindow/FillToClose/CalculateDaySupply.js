@@ -1,8 +1,15 @@
 
 
+const calculateIndividualDataSets = (arrayObj, qty) => {
+    let arrayOfDatasets = [...arrayObj];
+    let quantityRemain = qty - daySupply(arrayOfDatasets[0], qty);
+
+    return quantityRemain;
+}
+
 const daySupply = (objData, qty) => {
 
-    let result = objData.quantity * qty;
+    let result = qty / objData.quantity;
     const hours = Object.hasOwn(objData, 'hours') ? 24 / objData.hours : '';
     const weeksToDays = Object.hasOwn(objData, 'weeks') ? objData.weeks * 7 : '';
     switch (true) {
@@ -17,7 +24,7 @@ const daySupply = (objData, qty) => {
             break;
 
         case Object.hasOwn(objData, 'weeks'):
-            result = objData.quantity * weeksToDays;
+            result = weeksToDays;
             break;
 
         case Object.hasOwn(objData, 'hours'):
@@ -33,4 +40,4 @@ const daySupply = (objData, qty) => {
 };
 
 
-export { daySupply };
+export { daySupply, calculateIndividualDataSets};

@@ -51,4 +51,9 @@ describe('CheckSig', () => {
 
         expect(checkAndTranslate(sig)).toBe(`TAKE 1 TABLET BY MOUTH EVERY DAY`);
     });
+
+    test('take 4 tablet by mouth for 1 week', () => {
+        const sig = `tk 4 t po x 1 wk`;
+        expect(checkAndTranslate(sig)).toBe('TAKE 4 TABLET BY MOUTH FOR 1 WEEK');
+    });
 });

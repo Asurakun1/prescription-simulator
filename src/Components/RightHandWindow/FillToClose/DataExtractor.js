@@ -32,28 +32,30 @@ const sigReducer = (multiSig) => {
 const convertIntoExtractableData = (fullSig) => {
     const translated = fullSig;
     const tabletRegex = /TAKE [\d]+ TABLET/;
+    const halfTabletRegex = /TAKE HALF TABLET/;
     const hourRegex = /EVERY [\d]+ HOURS/;
-    const dayRegex = /FOR [\d]+ DAYS/;
-    const weekRegex = /FOR [\d]+ WEEKS/;
+    const daysRegex = /FOR [\d]+ DAYS/;
+    const dayRegex = /FOR [\d]+ DAY/;
+    const weeksRegex = /FOR [\d]+ WEEKS/;
+    const weekRegex = /FOR [\d]+ WEEK/;
     const increaseRegex = /INCREASE TO [\d]+ TABLET/;
     const taperRegex = /TAPER TO [\d]+ TABLET/;
     const qodRegex = /EVERY OTHER DAY/;
 
-    const qty = parseTranslation(translated, tabletRegex);
+    const qty = !translated.match(halfTabletRegex) ? parseTranslation(translated, tabletRegex) : 0.5;
     const hours = parseTranslation(translated, hourRegex);
-    const days = parseTranslation(translated, dayRegex);
-    const weeks = parseTranslation(translated, weekRegex);
+    const days = parseTranslation(translated, dayRegex) ? parseTranslation(translated, dayRegex) : parseTranslation(translated, daysRegex); 
+    const weeks = parseTranslation(translated, weekRegex) ? parseTranslation(translated, weekRegex) : parseTranslation(translated, weeksRegex);
     const increase_quantity = parseTranslation(translated, increaseRegex);
     const taper = parseTranslation(translated, taperRegex);
     const qod = parseContainmentPhrase(translated, qodRegex) ? true : false;
 
     
     const extractedData = {
-        quantity: parseInt(qty),
+        quantity: parseFloat(qty) ? parseFloat(qty) : parseFloat(increase_quantity),
         hours: parseInt(hours),
         days: parseInt(days),
         weeks: parseInt(weeks),
-        increase_quantity: parseInt(increase_quantity),
         taper: parseInt(taper),
         qod: qod
     }
