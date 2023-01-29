@@ -30,6 +30,11 @@ const remainingQuantity = (objData, qty) => {
             result = qty - (objData.quantity * hours * objData.days);
             break;
 
+
+        case Object.hasOwn(objData, 'qod') && Object.hasOwn(objData, 'weeks'):
+            result = qty - (0.5 * weeksToDays);
+            break;
+
         case Object.hasOwn(objData, 'weeks'):
             result = qty - (objData.quantity * weeksToDays);
             break;
@@ -62,16 +67,16 @@ const daySupply = (objData, qty) => {
             result = objData.quantity * hours * objData.days;
             break;
 
+        case Object.hasOwn(objData, 'qod'):
+            result = qty / 0.5;
+            break;
+
         case Object.hasOwn(objData, 'weeks'):
             result = weeksToDays;
             break;
 
         case Object.hasOwn(objData, 'hours'):
             result = objData.quantity * hours;
-            break;
-
-        case Object.hasOwn(objData, 'qod'):
-            result = qty / 0.5;
             break;
 
         case Object.hasOwn(objData, 'days'):

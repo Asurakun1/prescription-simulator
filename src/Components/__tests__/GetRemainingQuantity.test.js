@@ -43,4 +43,12 @@ describe('Get the remaining quantity from a single sig phrase', () => {
 
         expect(remainingQuantity(sigDataSet, quantity)).toBe(0);
     });
+
+    test('take 1 tablet by mouth every other day for 2 weeks', () => {
+        const sig = `tk 1 t po qod x 2 wks`;
+        const quantity = 30;
+        const sigDataSet = returnSingleOrMultiplePhrases(sig);
+
+        expect(remainingQuantity(sigDataSet, quantity)).toBe(23);
+    });
 });
