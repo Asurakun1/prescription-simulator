@@ -70,6 +70,10 @@ const daySupply = (objData, qty) => {
             result = objData.quantity * hours;
             break;
 
+        case Object.hasOwn(objData, 'qod'):
+            result = qty / 0.5;
+            break;
+
         case Object.hasOwn(objData, 'days'):
             result = objData.quantity * objData.days;
             break;

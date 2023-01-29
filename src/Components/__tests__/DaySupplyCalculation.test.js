@@ -98,5 +98,12 @@ describe('Day supply calculation', () => {
         const quantity = 30;
         const sigDataSet = returnSingleOrMultiplePhrases(sig);
         expect(daySupply(sigDataSet, quantity)).toBe(14);
+    });
+
+    test('take 1 tablet by mouth every other day', () => {
+        const sig = `tk 1 t po qod`;
+        const quantity = 30;
+        const sigDataSet = returnSingleOrMultiplePhrases(sig);
+        expect(daySupply(sigDataSet, quantity)).toBe(60);
     })
 });
