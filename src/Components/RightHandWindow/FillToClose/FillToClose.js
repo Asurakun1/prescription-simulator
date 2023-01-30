@@ -1,6 +1,8 @@
 import './FillToClose.css';
 import { useState } from 'react';
 import { buttonCheck, checkName, checkQuantity, checkSigs } from './CheckList';
+import { returnSingleOrMultiplePhrases } from './DataExtractor';
+import { calculateIndividualDataSets } from './CalculateDaySupply';
 
 const FillToClose = (props) => {
 
@@ -15,13 +17,19 @@ const FillToClose = (props) => {
     const firstName = document.getElementById('first-name-verify');
     const lastName = document.getElementById('last-name-verify');
     const instructions = document.getElementById('sigs-verify');
+    const days = document.getElementById('days-verify');
     //const QuantityDisp = document.getElementById('quantitydisp-verify');
+    /**
+     * setup for day supply calculation
+     */
+    const baseSig = props.sig;
+    const convert = returnSingleOrMultiplePhrases(baseSig);
+    const daysupply = calculateIndividualDataSets(convert, props.data.Quantity);
 
     const correct = {
         "DrugName": '',
         "Date": '',
         "Quantity": '',
-        "QuantityDisp": '',
         "Sigs": '',
         "Days": '',
         "Refills": '',
@@ -37,6 +45,8 @@ const FillToClose = (props) => {
         checkName(props.dateInput, props.date, correct, 'Date', date);
         checkQuantity(props.quantity, props.data.Quantity, correct, 'Quantity', quantity);
         checkSigs(props.userSig, props.sig, correct, 'Sigs', instructions);
+
+        checkQuantity(props.days, daysupply, correct, 'Days', days);
         checkQuantity(props.refills, props.data.Refills, correct, 'Refills', refills);
         checkName(props.phoneNumber, props.patientDoctor.Phone, correct, 'Phone', phone);
         checkName(props.NPI, props.patientDoctor.NPI, correct, 'NPI', npi);
@@ -46,6 +56,7 @@ const FillToClose = (props) => {
             buttonCheck('red', setCheck)
             : buttonCheck('lime', setCheck);
 
+        
         setTimeout(() => {
             buttonCheck('', setCheck);
         }, 5000)

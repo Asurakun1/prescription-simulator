@@ -77,6 +77,8 @@ const RightHandWindow = (props) => {
                 docLastName={docLastName}
                 userSig={sigs}
                 sig={props.data.Sig}
+                days={days}
+                setCleared={props.setCleared}
 
                 />
         </div>

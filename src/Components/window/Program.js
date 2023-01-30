@@ -54,6 +54,7 @@ const Program = (props) => {
                 insurance={patients[patientId].Patient_info.insurance}
                 prescriber={prescriberList}
                 patientDoctor={patients[patientId].Prescriber_info}
+                setCleared={patients[patientId]}
             />
         </div>
     );

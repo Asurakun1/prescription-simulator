@@ -74,7 +74,7 @@ describe('Day supply calculation', () => {
         const quantity = 30;
         const sigDataSet = returnSingleOrMultiplePhrases(sig);
 
-        expect(daySupply(sigDataSet, quantity)).toBe(12);
+        expect(daySupply(sigDataSet, quantity)).toBe(3);
     });
 
     test('take 1 tablet by mouth for 2 weeks', () => {

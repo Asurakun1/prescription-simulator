@@ -89,4 +89,15 @@ describe('Sig data extractor', () => {
 
     });
 
+    test('take 2 tablet by mouth every day then taper to 1 tablet by mouth every day', () => {
+        const sig = `tk 2 t po qd then taper to 1 t po qd`;
+        const convert = returnSingleOrMultiplePhrases(sig);
+
+        expect(convert).toStrictEqual([{
+            quantity: 2
+        },{
+            taper: 1
+        }]);
+    });
+
 })
