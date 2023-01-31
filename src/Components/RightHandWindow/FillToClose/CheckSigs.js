@@ -38,6 +38,8 @@ const checkIncomplete = (sig) => {
 
         case instructions.includes('INCREASE'):
             return instructions;
+        case instructions.includes('TAPER'):
+            return instructions;
         case !instructions.includes('TAKE'):
             instructions = `TAKE ${instructions}`;
             break;
@@ -62,7 +64,7 @@ const checkUserSigInput = (userSig, sigToTest) => {
 
 const CheckSig = (userSig, untranslatedSig) => {
 
-    const translated = translateSig(untranslatedSig.toUpperCase());
+    const translated = checkAndTranslate(untranslatedSig.toUpperCase());
     return checkUserSigInput(userSig, translated);
 
 }

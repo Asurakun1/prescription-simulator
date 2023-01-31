@@ -79,6 +79,7 @@ const RightHandWindow = (props) => {
                 sig={props.data.Sig}
                 days={days}
                 setCleared={props.setCleared}
+                setPatients={props.setPatients}
 
                 />
         </div>

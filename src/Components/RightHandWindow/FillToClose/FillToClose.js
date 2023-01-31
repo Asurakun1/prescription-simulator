@@ -52,11 +52,16 @@ const FillToClose = (props) => {
         checkName(props.NPI, props.patientDoctor.NPI, correct, 'NPI', npi);
         checkName(props.docFirstName, props.patientDoctor.FirstName, correct, 'First_Name', firstName);
         checkName(props.docLastName, props.patientDoctor.LastName, correct, 'Last_Name', lastName);
-        (Object.values(correct).some(Element => !Element)) ?
-            buttonCheck('red', setCheck)
-            : buttonCheck('lime', setCheck);
 
-        
+        if (Object.values(correct).some(Element => !Element)) {
+            buttonCheck('red', setCheck)
+        } else {
+            buttonCheck('lime', setCheck);
+            setTimeout(() => {
+                props.setCleared.cleared = 'True';
+                props.setPatients(prev => prev.filter(Element => Element.cleared === 'False'));
+            }, 2500)
+        }
         setTimeout(() => {
             buttonCheck('', setCheck);
         }, 5000)

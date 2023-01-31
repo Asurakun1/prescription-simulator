@@ -47,7 +47,7 @@ describe('CheckSig', () => {
     });
 
     test('it will complete sigs that appear incomplete', () => {
-        const sig = `1 t po qd`;
+        const sig = `1 tab po qd`;
 
         expect(checkAndTranslate(sig)).toBe(`TAKE 1 TABLET BY MOUTH EVERY DAY`);
     });
@@ -55,5 +55,13 @@ describe('CheckSig', () => {
     test('take 4 tablet by mouth for 1 week', () => {
         const sig = `tk 4 t po x 1 wk`;
         expect(checkAndTranslate(sig)).toBe('TAKE 4 TABLET BY MOUTH FOR 1 WEEK');
+    });
+
+    test(`1 tab po qd`, () => {
+        const sig = `1 tab po qd`;
+        const userSigInput = `TAKE 1 TABLET BY MOUTH EVERY DAY`;
+        const accepted = CheckSig(userSigInput, sig);
+
+        expect(accepted).toBe(true);
     });
 });

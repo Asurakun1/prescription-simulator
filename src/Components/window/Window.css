@@ -52,3 +52,9 @@
 .window .loading{
     text-align: center;
 }
+
+.window .inner-window .complete{
+    margin-top: 18vw;
+    max-height: 10vw;
+    text-align: center;
+}
