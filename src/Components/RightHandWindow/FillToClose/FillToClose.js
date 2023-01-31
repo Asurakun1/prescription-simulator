@@ -60,7 +60,7 @@ const FillToClose = (props) => {
             setTimeout(() => {
                 props.setCleared.cleared = 'True';
                 props.setPatients(prev => prev.filter(Element => Element.cleared === 'False'));
-            }, 2500)
+            }, 4000)
         }
         setTimeout(() => {
             buttonCheck('', setCheck);
